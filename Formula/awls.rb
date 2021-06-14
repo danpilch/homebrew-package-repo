@@ -5,25 +5,30 @@
 class Awls < Formula
   desc "Lookup EC2 information in the terminal"
   homepage ""
-  version "0.2.5"
+  version "0.3.0"
   license "MIT"
   bottle :unneeded
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/danpilch/awls/releases/download/v0.2.5/awls_0.2.5_darwin_amd64.tar.gz"
-    sha256 "85cb68ab64c5dbc64cb989b66ed4cbf2c5e7948bf0e658027a809d2cf2e904aa"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/danpilch/awls/releases/download/v0.3.0/awls_0.3.0_darwin_amd64.tar.gz"
+      sha256 "1c0787c11cba9b33967c4c85ff1153180f0ee127a6c20d8313282456cfad5c04"
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/danpilch/awls/releases/download/v0.3.0/awls_0.3.0_darwin_arm64.tar.gz"
+      sha256 "8df2ce7fd4e1d1dcfda44ac0a50c595a2eb826e174ad7bf37b76bd2589cdcafd"
+    end
   end
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/danpilch/awls/releases/download/v0.2.5/awls_0.2.5_darwin_arm64.tar.gz"
-    sha256 "dd86dd594546fc7fe36ebc32806eeb91d64e2f2afb2fc920a29de2b6893713a1"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/danpilch/awls/releases/download/v0.2.5/awls_0.2.5_linux_amd64.tar.gz"
-    sha256 "7bf1d237aa6dfada4bf1f76f1d84e7498f0dd9f82f083ac1a671262a88e9281b"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/danpilch/awls/releases/download/v0.2.5/awls_0.2.5_linux_arm64.tar.gz"
-    sha256 "74a10fc4778a4d49d0149be90fe3ea6a357b8ceb268f3e2f277d6529259cf8c9"
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/danpilch/awls/releases/download/v0.3.0/awls_0.3.0_linux_amd64.tar.gz"
+      sha256 "215e714391a04d49ba871199349d7302743e2f50477e6eaf222d2c032ac3e7b9"
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/danpilch/awls/releases/download/v0.3.0/awls_0.3.0_linux_arm64.tar.gz"
+      sha256 "97481dc490758f436d46d17c710692a3a04d06378477f20b3ecea15fd1fedda1"
+    end
   end
 
   def install
