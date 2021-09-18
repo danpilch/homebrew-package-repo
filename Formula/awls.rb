@@ -5,29 +5,29 @@
 class Awls < Formula
   desc "Lookup EC2 information in the terminal"
   homepage ""
-  version "0.3.0"
+  version "0.3.1"
   license "MIT"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/danpilch/awls/releases/download/v0.3.0/awls_0.3.0_darwin_amd64.tar.gz"
-      sha256 "1c0787c11cba9b33967c4c85ff1153180f0ee127a6c20d8313282456cfad5c04"
+      url "https://github.com/danpilch/awls/releases/download/v0.3.1/awls_0.3.1_darwin_amd64.tar.gz"
+      sha256 "76d7a3befe2c87d69d6452b41b088df028e11d4bc0b3eb7bd269dbbfc49387dd"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/danpilch/awls/releases/download/v0.3.0/awls_0.3.0_darwin_arm64.tar.gz"
-      sha256 "8df2ce7fd4e1d1dcfda44ac0a50c595a2eb826e174ad7bf37b76bd2589cdcafd"
+      url "https://github.com/danpilch/awls/releases/download/v0.3.1/awls_0.3.1_darwin_arm64.tar.gz"
+      sha256 "3c5a530d64c0e9c0a9922262e1b5949a7f28257791fbeb506a2adf090b27d666"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/danpilch/awls/releases/download/v0.3.0/awls_0.3.0_linux_amd64.tar.gz"
-      sha256 "215e714391a04d49ba871199349d7302743e2f50477e6eaf222d2c032ac3e7b9"
+      url "https://github.com/danpilch/awls/releases/download/v0.3.1/awls_0.3.1_linux_amd64.tar.gz"
+      sha256 "7f1486d94a27d7cc95c1a8785325c3050932d50c63c21ea08334f54c59de5ead"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/danpilch/awls/releases/download/v0.3.0/awls_0.3.0_linux_arm64.tar.gz"
-      sha256 "97481dc490758f436d46d17c710692a3a04d06378477f20b3ecea15fd1fedda1"
+      url "https://github.com/danpilch/awls/releases/download/v0.3.1/awls_0.3.1_linux_arm64.tar.gz"
+      sha256 "71c2ee39fa6c89a1a3a9e5bf9f73016a3576b9f5021283ec309288660542cd88"
     end
   end
 
