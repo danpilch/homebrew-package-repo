@@ -5,29 +5,29 @@
 class ProbateSearch < Formula
   desc "Alert on probate record searches"
   homepage ""
-  version "0.1.2"
+  version "0.1.3"
   license "MIT"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/danpilch/probate-search/releases/download/v0.1.2/probate-search_0.1.2_darwin_amd64.tar.gz"
-      sha256 "8eb427e8c2e4b4fa3ddee1f17a1fe52ddebdeba092be58adc42190a252f63078"
+      url "https://github.com/danpilch/probate-search/releases/download/v0.1.3/probate-search_0.1.3_darwin_amd64.tar.gz"
+      sha256 "0888fd9c770975bbfcd8deaf1591c7d4ec6be1a6e7d4d2a195e23a34408570a1"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/danpilch/probate-search/releases/download/v0.1.2/probate-search_0.1.2_darwin_arm64.tar.gz"
-      sha256 "8e9ed2a5c18b6bbb01530c1c4d6b3ddcb630d85d0bf658b136438d20643658d1"
+      url "https://github.com/danpilch/probate-search/releases/download/v0.1.3/probate-search_0.1.3_darwin_arm64.tar.gz"
+      sha256 "c03765ea4f00cbf321608dd0b20c20cf61e8e1ff7f9c1edb7b9f033e5e6fdf67"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/danpilch/probate-search/releases/download/v0.1.2/probate-search_0.1.2_linux_amd64.tar.gz"
-      sha256 "79c8d90d8d53ce3eee3fe6a8f5b9bc2a25ce362422c458287229c50314571bd9"
+      url "https://github.com/danpilch/probate-search/releases/download/v0.1.3/probate-search_0.1.3_linux_amd64.tar.gz"
+      sha256 "f874a684a1260708c0fe6b56844e6d3a8d93c6ce5e1dc8fdbc54caa54f2648ae"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/danpilch/probate-search/releases/download/v0.1.2/probate-search_0.1.2_linux_arm64.tar.gz"
-      sha256 "320a19921a54b89d97bf521a814099470da0f555e52da357e64c3dd9d425e8ec"
+      url "https://github.com/danpilch/probate-search/releases/download/v0.1.3/probate-search_0.1.3_linux_arm64.tar.gz"
+      sha256 "ce9374392dfecec2bd2bf3438ec9d04dfc2ba6863ebf7470d9e3f53fe448e40b"
     end
   end
 
