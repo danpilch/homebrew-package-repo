@@ -5,33 +5,44 @@
 class Awls < Formula
   desc "Lookup EC2 information in the terminal"
   homepage ""
-  version "0.3.2"
+  version "0.4.1"
   license "MIT"
-  bottle :unneeded
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/danpilch/awls/releases/download/v0.3.2/awls_0.3.2_darwin_amd64.tar.gz"
-      sha256 "fad2e2064541a93582e717c25540cc1ae8312aaed5360e316530031f639f71b8"
-    end
     if Hardware::CPU.arm?
-      url "https://github.com/danpilch/awls/releases/download/v0.3.2/awls_0.3.2_darwin_arm64.tar.gz"
-      sha256 "149368bfdcb34e23fd7ec52460b480d95b59f81b88b8dae142a2c502d3da0adc"
+      url "https://github.com/danpilch/awls/releases/download/v0.4.1/awls_0.4.1_darwin_arm64.tar.gz"
+      sha256 "c521d0d17248721f7e9cf07467d225a727664c4423560ce7adb31dfc35291b42"
+
+      def install
+        bin.install "awls"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/danpilch/awls/releases/download/v0.4.1/awls_0.4.1_darwin_amd64.tar.gz"
+      sha256 "2a8a975c4023faaf1d802d4aec11e4ae9ddf1ab4e4304f526d09311dbee9c8fe"
+
+      def install
+        bin.install "awls"
+      end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/danpilch/awls/releases/download/v0.3.2/awls_0.3.2_linux_amd64.tar.gz"
-      sha256 "ebca0c5b4754f0a0a29746866a16987496b644008fa7d8b85db61ef976eeb384"
-    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/danpilch/awls/releases/download/v0.3.2/awls_0.3.2_linux_arm64.tar.gz"
-      sha256 "fcb1bb67ba0fcf4eec9bc8c3016fed988f094653ad3ed09fc6d057aa74c4bd9c"
-    end
-  end
+      url "https://github.com/danpilch/awls/releases/download/v0.4.1/awls_0.4.1_linux_arm64.tar.gz"
+      sha256 "b37ac009defe747a9d3a70830388584d632a8cc21ac78f29436137eacc7298ed"
 
-  def install
-    bin.install "awls"
+      def install
+        bin.install "awls"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/danpilch/awls/releases/download/v0.4.1/awls_0.4.1_linux_amd64.tar.gz"
+      sha256 "37e8a5f7263d48dcde7dd071ffa5c4ec70d3d4c9b17ec7a8cfd6975480e29e64"
+
+      def install
+        bin.install "awls"
+      end
+    end
   end
 end
